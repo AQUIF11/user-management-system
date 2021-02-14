@@ -1,0 +1,17 @@
+table.table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+table.table td.email {
+    white-space: -o-pre-wrap; 
+    word-wrap: break-word;
+    white-space: pre-wrap; 
+    white-space: -moz-pre-wrap; 
+    white-space: -pre-wrap; 
+}
+
+
+.border-10 {
+	border-width : 10px !important;
+}

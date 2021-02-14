@@ -1,0 +1,74 @@
+<%- include('partials/header') %>
+
+
+<!-- ACTIONS -->
+<section id="actions" class="py-3 mb-0">
+      <div class="container">
+        <div class="row">
+			<div class="col-md-8 mx-auto">
+				<div class="card text-center">
+					<div class="card-header text-white">
+						<a
+              				href="/create_user"
+              				class="btn btn-primary btn-block"
+            			>
+              			<i class="fas fa-plus"></i> Add User
+            			</a>
+					</div>
+              		<div class="card-body bg-light">
+                		<h3>Users</h3>
+                		<h4 class="display-4"><i class="fas fa-users"></i> <%= results.length %></h4>
+              		</div>
+            	</div>
+			</div>
+			
+		</div>
+	  </div>
+	</section>	
+
+<!-- USER DETAILS -->
+<section id="user-details">
+	<div class="container">
+        <div class="row">
+        	<div class="col-md-12">
+            	<div class="card">
+              		<div class="card-header">
+                		<h4>User Details</h4>
+              		</div>
+              		<table class="table table-striped">
+                		<thead class="thead-dark">
+							<tr>
+								<th class="d-none d-lg-block">Id</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th class="d-none d-lg-block">Email</th>
+								<th>Contact No.</th>
+								<th>Update/Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for(var person of results) { %>
+							<tr>
+								<td class="d-none d-lg-block"><%= person.id %></td>
+								<td><%= person.first_name %></td>
+								<td><%= person.last_name %></td>
+								<td class="d-none d-lg-block"><%= person.email %></td>
+								<td><%= person.phone_number %></td>
+								<td>
+									<a href="/update_user_form/<%= person.id %>" class="btn btn-success mb-1">
+										<i class="fas fa-edit"></i> Update</a>
+									<a href="/delete_user/<%= person.id %>" class="btn btn-danger">
+										<i class="fas fa-times"></i> &nbsp;Delete &nbsp;</a>
+								</td>
+							</tr>
+							<% } %>
+						</tbody>
+			  		</table>
+				</div>
+		  	</div>
+		</div>
+	</div>
+</section>
+
+
+<%- include('partials/footer') %>
