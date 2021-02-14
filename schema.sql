@@ -1,0 +1,10 @@
+CREATE DATABASE profiles;
+
+CREATE TABLE users (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone_number BIGINT UNSIGNED NOT NULL,
+    PRIMARY KEY(id)
+);
